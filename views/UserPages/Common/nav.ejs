@@ -1,0 +1,58 @@
+<header id="header" class="header d-flex align-items-center sticky-top" style="background-color: azure;">
+  <div class="container-fluid container-xl position-relative d-flex align-items-center" >
+
+    <a href="/user/home" class="logo d-flex align-items-center me-auto">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <!-- <h6 class="btn-getstarted"><%=Data.name%></h6>  -->
+
+      <h1 class="sitename" style="font-size: 20px;">Tech Pro Academy</h1>
+
+
+    </a>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="/user/home" class="active">Home</a></li>
+        <li><a href="/user/about">About</a></li>
+        <li><a href="/user/courses">Courses</a></li>
+        <li><a href="/user/trainer">Trainers</a></li>
+        <li><a href="/user/event">Events</a></li>
+        <li><a href="/user/blog">Blog</a></li>
+
+        <li><a href="/user/contact">Contact</a></li>
+        <!-- <a href="/user/dashboard/page/<%=Data._id%>">DashBoard</a></li> -->
+        <!--  -->
+        <li class="dropdown"><a href="#"><span>
+          <i class="fa-solid fa-user-check" style="font-size: 30px;"></i>
+            </span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="#"><%=Data.name%> </a></li>
+            <li><a href="/user/dashboard/page/<%=Data._id%>"">DashBoard </a></li>
+              <li><a href=" /user/update/password/<%=Data._id%>"">Update Password </a></li>
+            <li><a href="/user/logout">LogOut</a></li>
+          </ul>
+          <!--  -->
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      <!--  -->
+
+      <!--  -->
+    </nav>
+
+    <!-- <a class="btn-getstarted" href="/user/courses">Get Started</a> -->
+
+    <!-- <h6 class="btn-getstarted"><%=Data.name%></h6>  -->
+    <a class="btn-getstarted" href="/user/contact">Book a Demo Class</a>
+    <!-- <a class="btn-getstarted" href="/user/dashboard/page">DashBoard</a> -->
+    <!-- <a class="btn-getstarted" href="/user/dashboard/page/<%=Data._id%>">DashBoard</a> -->
+    <!-- <a class="btn-getstarted" href="/user/logout">LogOut</a> -->
+
+
+    <!-- <a class="btn-getstarted" href="/user/update/password/<%=Data._id%>">UpdatePassword</a> -->
+    <!-- dropdown -->
+
+    <!--  -->
+
+  </div>
+</header>

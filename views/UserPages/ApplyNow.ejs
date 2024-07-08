@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Mentor Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/User/assets/img/favicon.png" rel="icon">
+  <link href="/User/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/User/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/User/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/User/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/User/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/User/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/User/assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Mentor
+  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
+  * Updated: May 10 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  <%-include('./Common/nav')%>
+  <!--  -->
+  <div class="container">
+    <h1 style="text-align: center;color: brown; background-color: gainsboro;">User Application Form</h1>
+    <!--  -->
+    <%if(Message.length>0){%>
+      <div class="alert alert-danger">
+        <%=Message%>
+      </div>
+    <%}%>
+    <form action="/user/post/apply" method="post">
+
+      <div class="form-group">
+           <input type="hidden" class="form-control" value="<%=Data._id%>" name="User_id">
+          </div>
+      
+
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Date of Birth</label>
+        <input type="date" class="form-control" name="Date_of_Birth">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Course Name</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="Course_Name">
+          <% for(cdata of coursedata){%>
+            <option></option>
+            <option value="<%=cdata._id%>">
+              <%=cdata.CourseName%>
+            </option>
+
+            <%}%>
+        </select>
+
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Qualification</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="Qualification">
+          <option></option>
+          <option>Diploma</option>
+          <option>B-Tech</option>
+          <option>Graduation</option>
+          <option>Bca</option>
+          <option>Mca</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Prefered mode of Education</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="Education_Mode">
+          <option></option>
+          <option>Offline</option>
+          <option>Online</option>
+
+        </select>
+      </div>
+      <!--  -->
+      <div class="form-group">
+        <label for="exampleInputPassword1">date</label>
+        <input type="date" class="form-control" name="date">
+      </div>
+      <!--  -->
+      <button type="reset" class="btn btn-primary">Reset</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <%-include('./Common/footer')%>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

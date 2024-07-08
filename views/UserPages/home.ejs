@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include('./Common/head')%>
+
+<body class="index-page">
+
+ <%-include('./Common/nav')%>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <% for(bdata of BannerData){if(bdata.status==1){%>
+      <section id="hero" class="hero section">
+
+        <img src="/<%=bdata.image%>" alt="" data-aos="fade-in">
+  
+        <div class="container">
+          
+          
+          <h2 data-aos="fade-up" data-aos-delay="100" class=""><%=bdata.BannerTitle%></h2>
+          <p data-aos="fade-up" data-aos-delay="200"><%=bdata.BannerDetails%></p>
+          <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+            
+            <a href="/user/courses" class="btn-get-started">Get Started</a>
+          </div>
+          <br> <br>
+           <!--flash message  -->
+        <%if(message1.length>0){%>
+          <div class="alert alert-success container-sm">
+            <%=message1%>
+          </div>
+        <%}%>
+        
+        <!--  -->
+        </div>
+  
+      </section>
+    <%}}%>
+    
+    <!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
+            <h3 style="text-align: center;">Our TeamWork</h3>
+            <!-- <p class="fst-italic" style="text-align: center;font-size: 20px;">
+              Our TeamWork
+            </p> -->
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <span>Talent wins games, but teamwork and intelligence win championships.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Alone we can do so little; together we can do so much.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Teamwork is the ability to work together toward a common vision.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Teamwork is the ability to work together toward a common vision. The ability to direct individual accomplishments toward organizational objectives. It is the fuel that allows common people to attain uncommon results.</span></li>
+            </ul>
+            <a href="/user/blog" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Counts Section -->
+   
+    <!-- Counts Section -->
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="section why-us">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="why-box">
+              <h3>Why Choose Our Courses?</h3>
+              <p>
+                Our instructors are industry leaders with years of real-world experience, ensuring you receive practical and up-to-date knowledge.Join a vibrant community of learners and professionals, fostering valuable connections and networking opportunities.
+              </p>
+              <div class="text-center">
+                <a href="#" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Why Box -->
+
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="col-xl-4">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-clipboard-data"></i>
+                  <h4>Hands-On Learning</h4>
+                  <p>Engage in hands-on projects and real-world applications that reinforce theoretical concepts and build practical skills.</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-gem"></i>
+                  <h4>Career Support</h4>
+                  <p>Benefit from our career services, including resume building, interview preparation, and job placement assistance.</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
+                  <i class="bi bi-inboxes"></i>
+                  <h4>Affordable Pricing</h4>
+                  <p>Enjoy high-quality education at competitive prices, with various financial aid options available to make learning accessible.</p>
+                </div>
+              </div><!-- End Icon Box -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Why Us Section -->
+
+    
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Courses</h2>
+        <p class="">Popular Courses</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+          <% for(Cdata of coursedata){if(Cdata.Catagory=="Top"){%>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+           
+            <div class="course-item">
+              <img src="/<%=Cdata.Image%>" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <p class="category"><%=Cdata.CourseName%></p>
+                  <p class="price"><%=Cdata.price%></p>
+                </div>
+
+                <h3><a href="#"><%=Cdata.Duration%></a></h3>
+                
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <img src="/<%=Cdata.Trainer_id.Image%>" class="img-fluid" alt="">
+                    <a href="" class="trainer-link"><%=Cdata.Trainer_id.TrainerName%></a>
+                  </div>
+                  <div class="trainer-rank d-flex align-items-center">
+                    <a href="/user/course/details/<%=Cdata._id%>" class="btn btn-info">Course Details</a>
+                   </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <%}}%> 
+          
+          <!-- End Course Item-->
+
+          
+           <!-- End Course Item-->
+
+         
+          <!-- End Course Item-->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Courses Section -->
+
+    <!-- Trainers Index Section -->
+    <section id="trainers-index" class="section trainers-index">
+
+      <div class="container">
+
+        <div class="row">
+          <% for(tdata of Trainerdata){if(tdata.Catagory=="Medium"){%>
+          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <img src="/<%=tdata.Image%>" class="img-fluid" alt="">
+              <div class="member-content">
+                <h4><%=tdata.TrainerName%></h4>
+                <span><%=tdata.Subject%></span>
+                <p>
+                  <%=tdata.TrainerDetails%>
+                </p>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%}}%>
+          <!-- End Team Member -->
+
+          
+         
+
+        </div>
+
+      </div>
+
+    </section><!-- /Trainers Index Section -->
+
+  </main>
+
+  <%-include('./Common/footer')%>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
